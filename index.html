@@ -14,15 +14,15 @@
         <h3> Task Manager </h3>
         <h4> Click to submit timer </h4>
         <div id = "input">
-          <input type = "text" value = "task name" ><br>
+          <input type = "text" value = "enter task name"><br>
         </div>
         <div id = "add">
-          <button class="btn" value = "submit"></button>
+          <button class="btn" value = "submit" onclick="timer.timer('00:25:00')"></button>
         </div>
       </div>
+	  <div id="timer"></div>
       <div id="entry">
-	    <h5 id="timer">25:00:00</h5>
-		<button id="play" onclick="startClock(timer, document.getElementById('timer')">Click Me</button>
+		<button id="play" onclick="timer.initializeClock('timer')"></button>
 	  </div>
 	  
     </div>
