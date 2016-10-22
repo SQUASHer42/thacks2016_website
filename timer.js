@@ -1,31 +1,43 @@
-var deadline = '25:00:00';
+var timers = [];
 
-function getTimeRemaining(endtime){
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor( (t/1000) % 60 );
-  var minutes = Math.floor( (t/1000/60) % 60 );
-  return {
-    'total': t,
-    'minutes': minutes,
-    'seconds': seconds
-  };
+function addTimer(time){
+	timers.push(makeTimer(time);
 }
 
-function initializeClock(id, endtime){
-	var timer = document.getElementById(id);
-	updateClock();
-	var timeinterval = setInterval(updateClock, 1000);
+var timer = {
+	var time;
+	this.timer = function(time){
+		this.time=time;
+	}
+	
+	this.initializeClock = function(id){
+		var timer = document.getElementById(id);
+		updateClock();
+		var timeinterval = setInterval(updateClock(deadline), 1000);
+	}
+	
+	this.getTimeRemaining = function(endtime){
+		var t = Date.parse(endtime) - Date.parse(new Date());
+		var seconds = Math.floor( (t/1000) % 60 );
+		var minutes = Math.floor( (t/1000/60) % 60 );
+		return {
+		'total': t,
+		'minutes': minutes,
+		'seconds': seconds
+		};
+	}
+	
+	this.updateClock = function(deadline){
+		var t = getTimeRemaining(deadline);
+		clock.innerHTML = 'minutes: ' + t.minutes + '<br>' + 'seconds: ' + t.seconds;
+		if(t.total<=0){
+		clearInterval(timeinterval);
+		}
+	}
+	
+	this.printTo = function(){
+		return this.time;
+	}
 }
 
-function updateClock(){
-  var t = getTimeRemaining(endtime);
-  clock.innerHTML = 'days: ' + t.days + '<br>' +
-                    'hours: '+ t.hours + '<br>' +
-                    'minutes: ' + t.minutes + '<br>' +
-                    'seconds: ' + t.seconds;
-  if(t.total<=0){
-    clearInterval(timeinterval);
-  }
-}
 
-initializeClock('timer', deadline);
