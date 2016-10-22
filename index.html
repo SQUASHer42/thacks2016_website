@@ -3,6 +3,7 @@
   <head>
     <title> Timer </title>
     <link rel = "stylesheet" type="text/css" href="pomodoro.css"/>
+	<script type="text/javascript" src="/timer.js"></script>
   </head>
   <body>
     <div id = "container">
@@ -16,12 +17,14 @@
           <input type = "text" value = "task name" ><br>
         </div>
         <div id = "add">
-          <button class="btn" value = "submit" >
+          <button class="btn" value = "submit"></button>
         </div>
       </div>
-      <div id = "timer"
-      </div>
+      <div id="entry">
+	    <h5 id="timer">25:00:00</h5>
+		<button id="play" onclick="startClock(timer, document.getElementById('timer')">Click Me</button>
+	  </div>
+	  
     </div>
-
   </body>
 </html>
