@@ -1,1 +1,30 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <title> Timer </title>
+    <link rel = "stylesheet" type="text/css" href="pomodoro.css"/>
+	<script type="text/javascript" src="/timer.js"></script>
+  </head>
+  <body>
+    <div id = "container">
+      <div id = "header">
+        <h1> Pomodoro Timer </h1>
+      </div>
+      <div id = "taskName">
+        <h3> Task Manager </h3>
+        <h4> Click to submit timer </h4>
+        <div id = "input">
+          <input type = "text" value = "enter task name"><br>
+        </div>
+        <div id = "add">
+          <button class="btn" value = "submit" onclick="timer.timer('00:25:00')"></button>
+        </div>
+      </div>
+	  <div id="timer"></div>
+      <div id="entry">
+		<button id="play" onclick="timer.initializeClock('timer')"></button>
+	  </div>
+	  
+    </div>
+  </body>
+</html>
